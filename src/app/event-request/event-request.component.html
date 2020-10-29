@@ -1,0 +1,64 @@
+
+<div class="col-70">
+    <div class="container">         
+        <form id="event-form" action="/action_page.php">
+            <div class="col-50">
+                <h3>Request for event planning</h3>
+                <label for="record-num"> Record number</label>
+                <input type="number" id="record-num" name="record-num" required #record_num>
+
+                <label for="client-name">Client name</label>
+                <input type="text" id="client-name" name="client-name" placeholder="Xiaoying" required #client_name>
+
+                <label for="type">Event type</label>
+                <input type="text" id="type" name="event-type" placeholder="Party">
+
+                <label for="from">From</label>
+                <input type="date" id="from" name="from">
+                <label for="to">To</label>
+                <input type="date" id="to" name="to">
+
+                <label for="attendee">Expected number of attendees</label>
+                <input type="number" id="attendee" name="attendee" placeholder="0">
+
+                <div class="subcontainer">
+                    <h4>Preferences</h4>
+                    <label>
+                        <input type="checkbox" id="deco" value="deco"> Decorations
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="food" value="food"> Breakfast, lunch, dinner
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="party" value="party"> Parties
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="drink" value="drink"> Soft/hot drinks
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="photo" value="photo"> Photos/filming
+                    </label>
+                </div>
+                <br/>
+                <label for="budget">Expected Budget</label>
+                <input type="number" id="budget" name="budget" placeholder="0">
+
+                <label for="budget">Status</label>
+                <input type="text" id="status" name="status" placeholder="waiting" #status>
+
+                <button type="submit" class="btn" (click)="addEvent(record_num, client_name, status)">Submit</button>
+            </div>
+        </form>
+    </div>
+</div> 
+
+<app-event-list
+    *ngFor="let event of events"
+    [event]="event">
+
+</app-event-list>
+

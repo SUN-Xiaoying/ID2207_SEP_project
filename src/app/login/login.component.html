@@ -1,0 +1,49 @@
+<form [formGroup]="loginForm"
+  (ngSubmit)="onSubmit(loginForm.value)"
+  [class.error]="!loginForm.valid && loginForm.touched">
+
+  <div class="container"
+    [class.error]="!loginForm.controls['acc'].valid && loginForm.controls['acc'].touched">
+    <label for="account"><b>Username</b></label>
+    <input type="text" 
+            placeholder="Enter Username" 
+            name="acc" 
+            [formControl]="loginForm.controls['acc']"
+            required>
+
+    <div *ngIf="loginForm.controls['acc'].hasError('required')" class="hint">
+      Account is required!</div>
+    <div *ngIf="!loginForm.controls['acc'].valid" class="hint">
+      Account is invalid!</div>
+
+
+    <br/>
+    <label for="psw"><b>Password</b></label>
+    <!-- <input type="password" placeholder="Enter Password" name="psw" ngModel="password" #password required> -->
+    <input type="password" 
+            laceholder="Enter password" 
+            name="psw" 
+            [formControl]="loginForm.controls['psw']"
+            required>
+
+    <div *ngIf="loginForm.controls['psw'].hasError('required')" class="hint">
+      Password is required!</div>
+    <div *ngIf="!loginForm.controls['psw'].valid" class="hint">
+      Password is invalid!</div>
+
+    <!-- <button type="submit" (click)="login(account, password)">Login</button> -->
+    <button type="submit">Login</button>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div *ngIf="!loginForm.valid">
+    Form is invalid!</div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
