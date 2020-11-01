@@ -38,7 +38,7 @@ input:required:invalid {
   border-color: #c00000;
 }
 
-.hint{
+.alert{
   background: red !important;
   color: white;
   padding: 10px !important;

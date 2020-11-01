@@ -8,42 +8,35 @@ import {
 import{ 
   AbstractControl,
   FormBuilder, 
-  FormControl, 
   FormGroup, 
   Validators
 }from '@angular/forms';
 
-import {User} from '../user/user.model'
+import { AuthService } from '../auth.sevice';
 
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent{
 
+export class LoginComponent{
+  message: string;
   loginForm: FormGroup;
   formCtrl : AbstractControl;
-  //@Input() user : User;
-  //users : User[];
 
+  // constructor(fb:FormBuilder, public authService: AuthService) {
+  constructor(public authService: AuthService) {
 
+    this.message = '';
+    // this.loginForm = fb.group(
+    //   {
+    //     'uname':['CS', Validators.required],
+    //     'psw':['cs123', Validators.required]
+    //   }
+    // );
 
-  constructor(fb:FormBuilder) {
-
-    //let control = new FormControl('acc', Validators.required);
-
-    this.loginForm = fb.group(
-      {
-        'acc':['CS', Validators.required],
-        'psw':['cs123', Validators.required]
-      },{
-        'acc':['SCS', Validators.required],
-        'psw':['scs123', Validators.required]
-      }
-    );
-
-    this.formCtrl = this.loginForm.controls['acc'];
+    // this.formCtrl = this.loginForm.controls['uname'];
 
     // this.users = [
     //   new User( 'CS', 'cs'),
@@ -54,12 +47,21 @@ export class LoginComponent{
     // ];// 'CS', 'SCS', 'HR', 'FM', 'PM', 'SM', 'AM'];
   }
 
-  // login(account:HTMLInputElement, password:HTMLInputElement):boolean{
-  //   console.log(`Enter user: ${account.value} and password: ${password.value}`);
-  //   return false;
-  // }
+  // login(username:HTMLInputElement, password:HTMLInputElement):boolean{
+  login(username:string, password:string):boolean{
+    this.message = '';
+    if(!this.authService.login(username, password)) {
+      this.message = 'Invalid credentials!';
+      setTimeout(function(){
+        this.message = 'Time out!'
+      }.bind(this), 2500);
+    }
+    console.log(`Enter user: ${username} and password: ${password}`);
+    return false;
+  }
 
-  onSubmit(form:any):void{
-    console.log('Submitted form: ', form);
+  logout():boolean{
+    this.authService.logout();
+    return false;
   }
 }
