@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import {EventRequest} from '../event-request/event-request.model';
-
 import{ 
   AbstractControl,
   FormBuilder, 
@@ -9,7 +7,7 @@ import{
   Validators
 }from '@angular/forms';
 
-import { AuthService } from '../auth.sevice';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'login',
@@ -19,8 +17,6 @@ import { AuthService } from '../auth.sevice';
 
 export class LoginComponent{
   message: string;
-  // loginForm: FormGroup;
-  // formCtrl : AbstractControl;
 
   constructor(public authService: AuthService) {
 
@@ -35,10 +31,6 @@ export class LoginComponent{
         this.message = 'Time out!'
       }.bind(this), 2500);
     }
-    else if(this.authService.login(username, password) == 'CS'){
-
-    }
-    console.log(`Enter user: ${username} and password: ${password}`);
     return 'Failed';
   }
 

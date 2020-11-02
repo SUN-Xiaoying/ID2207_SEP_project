@@ -5,8 +5,6 @@ import {
   ReactiveFormsModule
 } from '@angular/forms'
 
-import { HttpClientModule } from '@angular/common/http'
-
 import { 
   RouterModule, 
   Routes,
@@ -16,20 +14,26 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { EventRequestComponent } from './event-request/event-request.component';
-import { EventListComponent } from './event-list/event-list.component';
 import { ProtectedComponent } from './protected/protected.component';
 
-import { PMComponent } from './pm/pm.component';
-import { AssignmentsComponent } from './assignments/assignments.component';
-import { FMComponent } from './fm/fm.component';
+/*-----------Form----------*/
+import { EventRequestComponent } from './form/event-request/event-request.component';
+import { EventListComponent } from './form/event-list/event-list.component';
+import { AssignmentsComponent } from './form/assignments/assignments.component';
+import { RecruitmentComponent } from './form/recruitment/recruitment.component';
+import { FinancialComponent } from './form/financial/financial.component';
 
+/*-----------Actor----------*/
+import { SCSComponent } from './actor/scs/scs.component';
+import { PMComponent } from './actor/pm/pm.component';
+import { FMComponent } from './actor/fm/fm.component';
+import { AMComponent } from './actor/am/am.component';
 
-import { AUTH_PROVIDERS } from './auth.sevice';
+import { AUTH_PROVIDERS } from './services/auth.service';
 import { LoggedInGuard } from './logged-in.guard';
 import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { from } from 'rxjs';
+
 
 
 export const routes: Routes = [
@@ -62,13 +66,15 @@ export const routes: Routes = [
     AppComponent,
     LoginComponent,
     ProtectedComponent,
-    UserComponent,
-    UserListComponent,
     EventRequestComponent,
     PMComponent,
+    FMComponent,
+    SCSComponent,
+    AMComponent,
     EventListComponent,
     AssignmentsComponent,
-    FMComponent
+    RecruitmentComponent,
+    FinancialComponent
   ],
   imports: [
     AppRoutingModule ,

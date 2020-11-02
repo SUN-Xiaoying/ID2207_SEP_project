@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Production Management</h2>
+
+    <button (click)="toggleRecruitment()">Recruitment Request</button>
+    <div *ngIf="showRecruitment()">
+        <recruitment></recruitment>
+    </div>
+
+    <button (click)="toggleFinancial()">Financial Request</button>
+    <div *ngIf="showFinancial()">
+        <financial></financial>
+    </div>
+
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Senior Customer Service</h2>
+    <label for="token">List Index</label>
+    <input type="text" 
+            name="token"
+            id="token" 
+            #token>
+    <br/>
+    <label for="newstatus">New Status</label>
+    <input type="text" 
+            name="newstatus"
+            id="newstatus" 
+            #newstatus>
+    <br/>
+    <button (click)="updateStatus(token, newstatus)">Change status</button>
+    <br/>
+    <button (click)="redirectToFM(token)">Redirect To FM</button>
+</div>
+
+<event-list></event-list>

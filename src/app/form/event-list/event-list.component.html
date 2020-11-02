@@ -1,0 +1,22 @@
+<h2>Event List</h2>
+<table id="event-list-table">
+    <thead>    
+        <tr>
+            <th>Index</th>
+            <th>Record Number</th>
+            <th>Client Name</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let event of events; let i = index"
+            [event] = event>
+            <td>{{i+1}}</td>
+            <td>{{event.record}}</td>
+            <td>{{event.cname}} </td>
+            <td>{{event.status}}</td>
+        </tr>
+    </tbody>
+</table>
+
+

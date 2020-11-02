@@ -36,18 +36,7 @@
 
     <button type="submit" (click)="login(useranme.toString(), password.toString())">Login</button>
 
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
 
-  <div *ngIf="!loginForm.valid">
-    Form is invalid!</div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
 </form> 
 -->
 
@@ -64,15 +53,30 @@
     </div>
   
     <button type="submit" (click)="login(useranme, password)">Submit</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+    
   </form>
 </div>
-
 
 <div class="cs" *ngIf="authService.getUser()=='CS'">
   Logged in as <b>{{authService.getUser()}}</b>
   <br/>
   <a href (click)="logout()">Logout</a>
   <event-request></event-request>
+</div>
+
+<div class="scs" *ngIf="authService.getUser()=='SCS'">
+  Logged in as <b>{{authService.getUser()}}</b>
+  <br/>
+  <a href (click)="logout()">Logout</a>
+  <scs></scs>
 </div>
 
 <div class="pm" *ngIf="authService.getUser()=='PM'">
@@ -82,6 +86,19 @@
   <pm></pm>
 </div>
 
+<div class="am" *ngIf="authService.getUser()=='FM'">
+  Logged in as <b>{{authService.getUser()}}</b>
+  <br/>
+  <a href (click)="logout()">Logout</a>
+  <fm></fm>
+</div>
+
+<div class="am" *ngIf="authService.getUser()=='AM'">
+  Logged in as <b>{{authService.getUser()}}</b>
+  <br/>
+  <a href (click)="logout()">Logout</a>
+  <am></am>
+</div>
 
 <div class="alert" role="alert" *ngIf="message">
   {{message}}

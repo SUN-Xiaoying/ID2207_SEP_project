@@ -1,0 +1,22 @@
+#event-list-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#event-list-table td, #event-list-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#event-list-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#event-list-table tr:hover {background-color: #ddd;}
+
+#event-list-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ffe884;
+  color: black;
+}

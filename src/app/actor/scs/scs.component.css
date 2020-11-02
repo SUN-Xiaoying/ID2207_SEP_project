@@ -1,0 +1,34 @@
+.container {
+  background-color: rgb(255, 241, 223);
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+  
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+input[type="text"]{
+  margin: 0px 9px 0px 0px;
+  vertical-align: bottom;
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+button {
+  background-color: #ffe884;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+  
+  /* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}

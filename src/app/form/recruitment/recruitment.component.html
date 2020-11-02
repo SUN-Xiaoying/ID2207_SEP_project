@@ -1,0 +1,56 @@
+<div class="container"> 
+    <form>
+        <h2>Recruitment Request</h2>  
+        <label for="record"> Request sequence: </label>
+        <input type="text" 
+                id="record" 
+                name="record" 
+                #record 
+                required>
+
+        <label for="ctype">Contract type: </label>
+        <div class="subcontainer">
+            <input type="radio" name="ctype" id="full"> Full time
+            <input type="radio" name="ctype" id="part"> Part time
+        </div>
+    
+        <label for="dept">Requesting department: </label>
+        <div class="subcontainer">
+            <input type="radio" name="dept" id="am"> Administration
+            <input type="radio" name="dept" id="scs"> Services
+            <input type="radio" name="dept" id="pm"> Production
+            <input type="radio" name="dept" id="fm"> Financial
+        </div>
+
+        <br/>
+        <label for="exp">Years of experience: </label>
+        <input type="text" id="exp" name="exp" placeholder="3 years min">
+
+        <label for="title">Job title: </label>
+        <input type="text" 
+                id="title" 
+                name="title" 
+                placeholder="Intern"
+                #title
+                required>
+
+        <label for="des">Job description: </label>
+        <input type="text" id="des" name="des">
+
+        <label for="status">Status</label>
+        <input type="text" 
+                id="status" 
+                name="status" 
+                placeholder="waiting" 
+                #status 
+                required>
+
+        <button type="submit" 
+                class="btn" 
+                (click)="addRecruitment(record, title, status)">Submit</button>
+    </form>
+</div>
+
+
+
+

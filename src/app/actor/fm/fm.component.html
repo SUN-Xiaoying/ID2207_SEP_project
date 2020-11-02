@@ -1,0 +1,68 @@
+
+<button (click)="toggleEvent()">Event-planning Management</button>
+<div *ngIf="showEvent()">
+    <div class="container">
+        <h2>Event-planning Management</h2>
+        <label for="token">List Index</label>
+        <input type="text" 
+                name="token"
+                id="token" 
+                #token>
+        <br/>
+        <label for="newstatus">New Status</label>
+        <input type="text" 
+                name="newstatus"
+                id="newstatus" 
+                #newstatus>
+        <br/>
+        <button (click)="updateStatus(token, newstatus)">Change status</button>
+        <br/>
+        <button (click)="redirectToAM(token)">Redirect To AM</button>
+    </div>
+    
+    <h2>Financial Manager's Event List</h2>
+    <table id="fm-event-list">
+        <thead>    
+            <tr>
+                <th>No.</th>
+                <th>Record Number</th>
+                <th>Client Name</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let event of fmEvents; let i = index"
+                [event] = event>
+                <td>{{i+1}}</td>
+                <td>{{event.record}}</td>
+                <td>{{event.cname}} </td>
+                <td>{{event.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<button (click)="toggleFinancial()">Financial Request</button>
+<div *ngIf="showFinancial()">
+    <h2>Financial Manager's Event List</h2>
+    <table id="fm-financial">
+        <thead>    
+            <tr>
+                <th>No.</th>
+                <th>Record Number</th>
+                <th>Client Name</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let event of fmEvents; let i = index"
+                [event] = event>
+                <td>{{i+1}}</td>
+                <td>{{event.record}}</td>
+                <td>{{event.cname}} </td>
+                <td>{{event.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
