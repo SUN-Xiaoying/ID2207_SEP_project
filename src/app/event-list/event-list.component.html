@@ -1,18 +1,6 @@
-<div class="container">
-    <table id="submitted">
-        <thead>
-            <tr>
-                <th>Record Number</th>
-                <th>Client Name</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>{{event.record_num}}</th>
-                <th>{{event.client_name}}</th>
-                <th>{{event.status}}</th>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<ul>
+    <li *ngFor="let event of events"
+        [event] = event>
+        {{event}}
+    </li>
+</ul>

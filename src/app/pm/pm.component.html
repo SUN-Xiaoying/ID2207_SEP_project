@@ -1,1 +1,22 @@
-<p>pm works!</p>
+<div class="container">
+    <h1>Production Manager Table</h1>
+    <table id="pm">
+        <thead>
+            <tr>
+                <th>Worklist</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a [routerLink]="['./event-list']">Event-list</a></td>
+            </tr>
+            <tr>
+                <td><a [routerLink]="['./assignments']">Assign tasks</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="pm-area">
+    <router-outlet></router-outlet>
+</div>
