@@ -17,10 +17,13 @@ export class FMComponent{
   t_event:boolean = false;
   t_financial:boolean = false;
   fmEvents : EventRequest[]=[];
-  fRequests : FinancialRequest[]=[];
+  fmRequests : FinancialRequest[]=[];
 
-  constructor( private formService: FormService ) {
+  constructor( 
+    private formService: FormService,
+    private financialService: FinancialService ) {
     this.fmEvents = this.formService.fmEvents;
+    this.fmRequests = this.financialService.requests;
    }
 
  
@@ -44,6 +47,10 @@ export class FMComponent{
 
    redirectToAM(token:HTMLInputElement){
     this.formService.redirectTo(token, 'AM');
+   }
+
+   updateBudget(token:HTMLInputElement, newbudget:HTMLInputElement){
+    this.financialService.updateBudget(token,newbudget);
    }
 
 }

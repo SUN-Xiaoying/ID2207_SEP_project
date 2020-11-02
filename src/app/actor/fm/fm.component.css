@@ -10,7 +10,7 @@ label {
   display: block;
 }
 
-input[type="text"]{
+input[type="text"], input[type="number"]{
   margin: 0px 9px 0px 0px;
   vertical-align: bottom;
   display: inline-flex;
@@ -26,9 +26,14 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  font-size: 17px;
+}
+
+.subbutton{
+  width: 50%;
 }
   
-  /* Add a hover effect for buttons */
+/* Add a hover effect for buttons */
 button:hover {
   opacity: 0.8;
 }

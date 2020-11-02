@@ -1,25 +1,23 @@
 
 <button (click)="toggleEvent()">Event-planning Management</button>
-<div *ngIf="showEvent()">
-    <div class="container">
-        <h2>Event-planning Management</h2>
-        <label for="token">List Index</label>
-        <input type="text" 
-                name="token"
-                id="token" 
-                #token>
-        <br/>
-        <label for="newstatus">New Status</label>
-        <input type="text" 
-                name="newstatus"
-                id="newstatus" 
-                #newstatus>
-        <br/>
-        <button (click)="updateStatus(token, newstatus)">Change status</button>
-        <br/>
-        <button (click)="redirectToAM(token)">Redirect To AM</button>
-    </div>
-    
+<div class="container" *ngIf="showEvent()">
+    <h2>Event-planning Management</h2>
+    <label for="token">List Index</label>
+    <input type="text" 
+            name="token"
+            id="token" 
+            #token>
+    <br/>
+    <label for="newstatus">New Status</label>
+    <input type="text" 
+            name="newstatus"
+            id="newstatus" 
+            #newstatus>
+    <br/>
+    <button class="subbutton" (click)="updateStatus(token, newstatus)">Change status</button>
+    <br/>
+    <button class="subbutton" (click)="redirectToAM(token)">Redirect To AM</button>
+    <br/>
     <h2>Financial Manager's Event List</h2>
     <table id="fm-event-list">
         <thead>    
@@ -43,24 +41,38 @@
 </div>
 
 <button (click)="toggleFinancial()">Financial Request</button>
-<div *ngIf="showFinancial()">
-    <h2>Financial Manager's Event List</h2>
+<div class="container" *ngIf="showFinancial()">
+    <label for="token">List Index</label>
+    <input type="text" 
+            name="token"
+            id="token" 
+            #token>
+
+    <label for="newbudget">New Budget</label>
+    <input type="text" 
+            name="newbudget"
+            id="newbudget" 
+            #newbudget>
+    <br/>
+    <button class="subbutton" (click)="updateBudget(token, newbudget)">Change budget</button>
+
+    <h2>Financial Requests' List</h2>
     <table id="fm-financial">
         <thead>    
             <tr>
-                <th>No.</th>
+                <th>Index</th>
                 <th>Record Number</th>
-                <th>Client Name</th>
-                <th>Status</th>
+                <th>Project reference</th>
+                <th>Budget</th>
             </tr>
         </thead>
         <tbody>
-            <tr  *ngFor="let event of fmEvents; let i = index"
-                [event] = event>
+            <tr  *ngFor="let request of fmRequests; let i = index"
+                [request] = request>
                 <td>{{i+1}}</td>
-                <td>{{event.record}}</td>
-                <td>{{event.cname}} </td>
-                <td>{{event.status}}</td>
+                <td>{{request.record}}</td>
+                <td>{{request.ref}} </td>
+                <td>{{request.budget}}</td>
             </tr>
         </tbody>
     </table>

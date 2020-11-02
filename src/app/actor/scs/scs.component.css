@@ -26,6 +26,7 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  font-size: 17px;
 }
   
   /* Add a hover effect for buttons */
