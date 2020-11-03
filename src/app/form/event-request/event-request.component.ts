@@ -32,7 +32,6 @@ export class EventRequestComponent {
   
   constructor(
     fb: FormBuilder,
-    private route: ActivatedRoute,
     private formService: FormService){
 
     this.eventForm = fb.group({
@@ -55,7 +54,6 @@ export class EventRequestComponent {
     let eventform = new EventRequest(_record, _cname, _status);
     this.formService.addEvent(eventform);
     window.alert('Your form has been added');
-    //return false;
   }
 
 

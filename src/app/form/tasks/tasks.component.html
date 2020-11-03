@@ -1,0 +1,21 @@
+<table id="mody-tasks">
+    <thead>    
+        <tr>
+            <th>Index</th>
+            <th>Type</th>
+            <th>Reference</th>
+            <th>Send To</th>
+            <th>Priority</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let task of tasks; let i = index"
+            [task] = task>
+            <td>{{i+1}}</td>
+            <td>{{task.type}}</td>
+            <td>{{task.ref}} </td>
+            <td>{{task.assign}}</td>
+            <td>{{task.priority}}</td>
+        </tr>
+    </tbody>
+</table>

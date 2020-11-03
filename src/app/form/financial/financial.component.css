@@ -1,102 +1,107 @@
 /* Bordered form */
 form {
-    border: 3px solid #f1f1f1;
+  border: 3px solid #f1f1f1;
+}
+
+label {
+margin-bottom: 10px;
+display: block;
+}
+
+/* Full-width inputs */
+input[type=text],input[type=number] { 
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  background-color: #ffdddd;
+}
+
+form:invalid {
+  border: 5px solid #ffdddd;
+}
+
+input:valid {
+  background-color: #ddffdd;
+}
+
+form:valid {
+  border: 5px solid #ddffdd;
 }
   
-  /* Full-width inputs */
-  input[type=text] { 
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  input:invalid {
-    background-color: #ffdddd;
-  }
-  
-  form:invalid {
-    border: 5px solid #ffdddd;
-  }
-  
-  input:valid {
-    background-color: #ddffdd;
-  }
-  
-  form:valid {
-    border: 5px solid #ddffdd;
-  }
-    
-  input:required {
-    border-color: #800000;
-    border-width: 3px;
-  }
-  
-  input:required:invalid {
-    border-color: #c00000;
-  }
-  
-  .alert{
-    background: red !important;
-    color: white;
-    padding: 10px !important;
-    border-radius: 0 !important;
-    position: relative; 
-    display: inline-block !important;
-    box-shadow: 1px 1px 1px #aaaaaa;
-    margin-top: 10px;
-  }
+input:required {
+  border-color: #800000;
+  border-width: 3px;
+}
 
-  .container {
-    background-color:rgb(251, 245, 252);
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-  }
+input:required:invalid {
+  border-color: #c00000;
+}
+
+.alert{
+  background: red !important;
+  color: white;
+  padding: 10px !important;
+  border-radius: 0 !important;
+  position: relative; 
+  display: inline-block !important;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin-top: 10px;
+}
+
+.container {
+  background-color:rgb(251, 245, 252);
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+.subcontainer {
+  background-color: rgb(201, 201, 201);
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
   
-  .subcontainer {
-    background-color: rgb(201, 201, 201);
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-  }
-    
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin: 0px 9px 0px 0px;
+  vertical-align: bottom;
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
   
-  label {
-    margin-bottom: 10px;
-    display: block;
-  }
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
   
-  input[type="radio"], input[type="checkbox"] {
-    margin: 0px 9px 0px 0px;
-    vertical-align: bottom;
-    display: inline-flex;
-    cursor: pointer;
-    position: relative;
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 300px) {
+  .row {
+    flex-direction: column-reverse;
   }
-    
-  .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 17px;
-  }
-  
-  .btn:hover {
-    background-color: #45a049;
-  }
-  
-    
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
-  @media (max-width: 300px) {
-    .row {
-      flex-direction: column-reverse;
-    }
-  }
+}

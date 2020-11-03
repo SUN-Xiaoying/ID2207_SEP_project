@@ -1,0 +1,36 @@
+<div class="assignForm">
+    <label for="ref">Project reference: </label>
+    <input type="text" 
+            id="ref" 
+            name="ref" 
+            placeholder="e12488"
+            #ref
+            required>
+
+    <label for="des">Description: </label>
+    <textarea type="text" id="des" name="des"></textarea>
+
+    <label for="assign">Assign to: </label>
+    <select id="assign" 
+            name="assign"
+            #assign>
+        <option value="Mogy">Mogy</option>
+        <option value="Angel">Angel</option>
+        <option value="Ben">Ben</option>
+    </select>
+
+    <br/>
+    <label for="priority">Priority: </label>
+    <select id="priority" 
+            name="priority"
+            #priority>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select>
+
+    <br/>
+    <button type="submit" 
+    class="btn" 
+    (click)="sendTask('General', ref, assign, priority)">Send Task</button>
+</div>
