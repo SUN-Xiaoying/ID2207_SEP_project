@@ -1,6 +1,18 @@
 # SEP
 
+ID2207 Morden Methods of Software Engineering in KTH. 
+
+The biggest problem with this system is that user can't browse the entire table.
+I chose Angular.js at first, then found this framework prefer TypeScript rather than JavaScript.
+So I won't update this project anymore.
+
+[demo.mp4](https://github.com/SUN-Xiaoying/SEP/blob/master/demo.mp4)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+
+## Preparation
+
+`npm install`
 
 ## Development server
 
